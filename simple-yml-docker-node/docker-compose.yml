@@ -1,0 +1,15 @@
+version: '3.8'  # Specifies the version of Docker Compose format being used.
+
+# Services
+services:
+
+  # backend service
+  backend:
+    build:  # Specifies how to build the Docker image for the service.
+      context: ../simple-docker-node  # Points to the directory containing the Dockerfile.
+      dockerfile: Dockerfile  # Specifies the name of the Dockerfile to use.
+
+    container_name: backend  # Sets the name of the container.
+
+    ports:  # Maps ports between the container and the host.
+      - "8080:8080"  # Redirects traffic from port 8080 on the host to port 8080 inside the container.
